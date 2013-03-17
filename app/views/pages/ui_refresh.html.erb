@@ -1,12 +1,27 @@
 <%= stylesheet_link_tag  "admin", :media => "all" %>
 
+<style >
+	.logo{
+		margin-left:15px;
+	}
+</style>
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
-    <a class="brand" href="#"><%=  image_tag 'logo.png' %></a>
-    <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
+    <a class="brand" href="#"><%=  image_tag 'logo.png' , class: "logo" %></a>
+    
+    <ul class="nav pull-right">
+			<li>		
+				
+				  <a class="dropdown-toggle"  role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+				    Dropdown
+				    <b class="caret"></b>
+				  </a>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				    ...
+				  </ul>
+
+			</li>
     </ul>
+
   </div>
 </div>
