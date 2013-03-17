@@ -24,7 +24,7 @@
 		height:100%;
 		left:0px;
 		top:0px;
-		background-color:pink;
+		background-color:#f1f1f1;
 	}
 
 	#people_area{
@@ -32,7 +32,7 @@
 		height:100%;
 		right:0px;
 		top:0px;
-		background-color:pink;
+		background-color:#f1f1f1;
 	}
 
 	#chat_area_wrap{
@@ -52,7 +52,7 @@
 		left:-50%;
 		margin:0 auto;
 		height:100%;
-		background-color:green;
+		
 	}
 
 	#message_box{
@@ -60,6 +60,15 @@
 		bottom: 10px;
 		margin-bottom:0px;
 	}
+	.send_message{
+		width:100%;
+	}
+
+	input.send_message{
+		height:30px;
+	}
+
+
 
 	/* Large desktop */
 @media (min-width: 1200px) { ... }
@@ -137,8 +146,12 @@
 		<div class="span12 offsetby2 layout_piece" id="chat_area">
 
 			<div class="span12" id="message_box">
-			  <input class="span10 " id="appendedInputButton" type="text">
-			  <button class="btn span2 " type="button">Send</button>
+			  <div class="span10">
+			  <input class="send_message" type="text">
+			  </div>
+			  <div class="span2">
+			  <button class="btn send_message" type="button">Send</button>
+				</div>
 			</div>
 			
 		</div>	
