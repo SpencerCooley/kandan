@@ -35,6 +35,7 @@ Kandan::Application.routes.draw do
   get "/approval", :to => "pages#approval"
   get "/suspended", :to => "pages#suspended"
   get "/about", :to =>"pages#about"
+  get "/ui_refresh", :to =>"pages#ui_refresh"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

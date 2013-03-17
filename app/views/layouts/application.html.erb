@@ -17,8 +17,12 @@
     <% end %>
   <%- end %>
 </head>
+
+
 <body data-kandan-config="<%= Kandan::Config.to_json %>">
-  <div id="kandan">
+  <div >
+    
+<!--
     <div class="header">
       <a href="/">
         <%= image_tag "logo.png", :class=>"logo" %>  
@@ -43,6 +47,7 @@
     <% else %>
       </div>
       <% end %>
+-->
     <div id="app_body">
 
     <%= yield %>
