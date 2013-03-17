@@ -42,6 +42,7 @@
 		left:50%;
 		margin:0 auto;
 		height:100%;
+		width:66%;
 	}
 
 	#chat_area{
@@ -56,8 +57,44 @@
 
 	#message_box{
 		position:absolute;
-		top:95%;
+		bottom: 10px;
+		margin-bottom:0px;
 	}
+
+	/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	#channel_area{
+		display:none;
+	}
+	#chat_area{
+		left:0px;
+	}
+
+	#people_area{
+		display:none;
+	}
+	#chat_area_wrap{
+		position:absolute;
+		height:100%;
+		top:0px;
+		left:0px;
+		
+		width:100%;
+	}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { ...
+	#channel_area{
+		display:none;
+	}
+}
 
 
 
@@ -96,12 +133,12 @@
 		Channels Area
 	</div>
 
-	<div class="span8 layout_piece" id="chat_area_wrap">
+	<div  layout_piece" id="chat_area_wrap">
 		<div class="span12 offsetby2 layout_piece" id="chat_area">
 
-			<div class="input-append span12" id="message_box">
-			  <input class="span11" id="appendedInputButton" type="text">
-			  <button class="btn" type="button">Send</button>
+			<div class="span12" id="message_box">
+			  <input class="span10 " id="appendedInputButton" type="text">
+			  <button class="btn span2 " type="button">Send</button>
 			</div>
 			
 		</div>	
