@@ -4,7 +4,65 @@
 	.logo{
 		margin-left:15px;
 	}
+	body{
+		overflow:hidden;
+	}
+	#app_body{
+		height:100%;
+
+	}
+
+	#new_ui{
+		background-color:red;
+		position:relative;
+	}
+
+	
+
+	#channel_area{
+		position:absolute;
+		height:100%;
+		left:0px;
+		top:0px;
+		background-color:pink;
+	}
+
+	#people_area{
+		position:absolute;
+		height:100%;
+		right:0px;
+		top:0px;
+		background-color:pink;
+	}
+
+	#chat_area_wrap{
+		position:absolute;
+		height:100%;
+		top:0px;
+		left:50%;
+		margin:0 auto;
+		height:100%;
+	}
+
+	#chat_area{
+		position:relative;
+		height:100%;
+		top:0px;
+		left:-50%;
+		margin:0 auto;
+		height:100%;
+		background-color:green;
+	}
+
+	#message_box{
+		position:absolute;
+		top:95%;
+	}
+
+
+
 </style>
+
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
     <a class="brand" href="#"><%=  image_tag 'logo.png' , class: "logo" %></a>
@@ -13,15 +71,45 @@
 			<li>		
 				
 				  <a class="dropdown-toggle"  role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-				    Dropdown
+				    <span><%= current_user.full_name_or_username %> </span>
 				    <b class="caret"></b>
 				  </a>
 				  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				    ...
+
+		       <li> <%= link_to 'Admin console', admin_root_path if current_user.is_admin? %></li>
+		        <li><%= link_to 'Edit Account', users_edit_path, @users_edit %><br /></li>
+		        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+		        <hr>
+		        <li><%= link_to 'About Kandan', about_path, @about %></li>
 				  </ul>
 
 			</li>
     </ul>
 
   </div>
+</div>
+
+
+<div class="row-fluid" id="the_main_wrap">
+	
+	<div class="span2 side-panel layout_piece" id="channel_area" >
+		Channels Area
+	</div>
+
+	<div class="span8 layout_piece" id="chat_area_wrap">
+		<div class="span12 offsetby2 layout_piece" id="chat_area">
+
+			<div class="input-append span12" id="message_box">
+			  <input class="span11" id="appendedInputButton" type="text">
+			  <button class="btn" type="button">Send</button>
+			</div>
+			
+		</div>	
+	</div>
+
+	<div class="span2 side-panel layout_piece" id="people_area" >
+		People Area
+	</div>
+
+
 </div>
