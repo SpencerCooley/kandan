@@ -1,5 +1,31 @@
 <%= stylesheet_link_tag  "admin", :media => "all" %>
 
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		
+		
+
+		$(window).resize(function() {
+			var windowHeight = $(window).height();
+			var topSpace = $('.navbar-inner').height() +40;
+			var topSpaceRatio = topSpace/windowHeight;
+			console.log(windowHeight)
+			console.log(topSpace)
+  		console.log(topSpaceRatio)
+  		var chatBoxSize = (1 - topSpaceRatio)*100
+  		var messageBoxSize = 
+  		console.log(chatBoxSize)
+  		$('#chat_box').css('height', chatBoxSize+'%')
+		});
+
+
+	});
+</script>
+
+
+
+
 <style >
 	.logo{
 		margin-left:15px;
@@ -48,25 +74,42 @@
 	#chat_area{
 		position:relative;
 		height:100%;
-		top:0px;
 		left:-50%;
-		margin:0 auto;
+		top:48px;
 		height:100%;
 		
 	}
 
-	#message_box{
-		position:absolute;
-		bottom: 10px;
-		margin-bottom:0px;
-	}
 	.send_message{
 		width:100%;
+		position:absolute;
+		bottom: 40px;
+		left:0px;
+		height:40px;
 	}
 
-	input.send_message{
-		height:30px;
+
+	#chat_box{
+		position:relative;
+		background-color:green;
+		height:80px;
+		background-color:#fff;
+		overflow-y:scroll;
+		
 	}
+
+.no_margin_left{
+	margin-left:0px;
+}
+
+
+.navbar{
+	z-index:100;
+}
+
+
+
+
 
 
 
@@ -93,7 +136,6 @@
 		height:100%;
 		top:0px;
 		left:0px;
-		
 		width:100%;
 	}
 }
@@ -104,6 +146,8 @@
 		display:none;
 	}
 }
+
+
 
 
 
@@ -142,20 +186,74 @@
 		Channels Area
 	</div>
 
-	<div  layout_piece" id="chat_area_wrap">
-		<div class="span12 offsetby2 layout_piece" id="chat_area">
 
-			<div class="span12" id="message_box">
-			  <div class="span10">
-			  <input class="send_message" type="text">
-			  </div>
-			  <div class="span2">
-			  <button class="btn send_message" type="button">Send</button>
-				</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div  layout_piece" id="chat_area_wrap">
+		<div class="span12 offsetby2" id="chat_area">
+
+
+
+
+			<div class="span12" id="chat_box">
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
+				<h1>Message</h1>
 			</div>
+			<textarea class="send_message span12" ></textarea>
+			
+
+			
+			  
+			  
+			  
+			  
+			
+			<!--ends the message box-->
+
+
 			
 		</div>	
 	</div>
+
+
+
+
+
+
+
+
 
 	<div class="span2 side-panel layout_piece" id="people_area" >
 		People Area
