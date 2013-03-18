@@ -1,26 +1,32 @@
 <%= stylesheet_link_tag  "admin", :media => "all" %>
 
 <script type="text/javascript">
+	
 	$(document).ready(function(){
 
-		
-		
-
-		$(window).resize(function() {
+		// because the nav bar at the top has a height that is set in px
+		// the chat_box sizing will be thrown off since it's height is in %.
+		// This sets the chat_box height relative to the ratio of "the nav bar height" /  "window height"
+		function determineChatBoxSize(){
 			var windowHeight = $(window).height();
-			var topSpace = $('.navbar-inner').height() +40;
-			var topSpaceRatio = topSpace/windowHeight;
-			console.log(windowHeight)
-			console.log(topSpace)
-  		console.log(topSpaceRatio)
-  		var chatBoxSize = (1 - topSpaceRatio)*100
+			var fixedSpace = $('.navbar-inner').height() +48;
+			var fixedSpaceRatio = fixedSpace/windowHeight;
+			var chatBoxSize = (1 - fixedSpaceRatio)*100
   		var messageBoxSize = 
   		console.log(chatBoxSize)
   		$('#chat_box').css('height', chatBoxSize+'%')
+		}
+
+
+		$(window).resize(function() {
+			determineChatBoxSize();
 		});
+
+		determineChatBoxSize();
 
 
 	});
+
 </script>
 
 
@@ -98,13 +104,18 @@
 		
 	}
 
-.no_margin_left{
-	margin-left:0px;
-}
+	.no_margin_left{
+		margin-left:0px;
+	}
 
 
-.navbar{
-	z-index:100;
+	.navbar{
+		z-index:100;
+	}
+
+	
+.message.name{
+	color:#aeb9bd;
 }
 
 
@@ -146,6 +157,7 @@
 		display:none;
 	}
 }
+
 
 
 
@@ -205,32 +217,13 @@
 
 
 			<div class="span12" id="chat_box">
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
-				<h1>Message</h1>
+				<% 12.times do %>
+					<%= render 'message' %>
+				<% end %>
 			</div>
+			<!--ends the chat_box div-->
+
+
 			<textarea class="send_message span12" ></textarea>
 			
 
