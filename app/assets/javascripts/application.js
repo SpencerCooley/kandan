@@ -23,3 +23,4 @@
 //= require lib/jquery.atwho
 //= require lib/jquery.caret
 //= require lib/jquery.inputHistory
+//= require bootstrap
