@@ -12,30 +12,98 @@
   $(document).data("active-users", [])
 <%- end %>
 
-<% content_for :header_content do %>
-  <div class="search">
-      <form method="get" action="/search" target="_blank">
-        <input type="text" class="query" name="query"/>
-      </form>
-    </div>
-<% end %>
 
-  <div class="main-area">
-    <div id="mask_container">
-    	<div id="head-mask">
-    	  <div class="corner_cover" style="float:left;position:relative;left:-10px;"></div>
-    	  <div class="corner_cover"  style="float:right;position:relative;right:-10px;"></div>
-    	</div>
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+    // because the nav bar at the top has a height that is set in px
+    // the chat_box sizing will be thrown off since it's height is in %.
+    // This sets the chat_box height relative to the ratio of "the nav bar height" /  "window height"
+
+    
+    function determineChatBoxSize(){
+      var windowHeight = $(window).height();
+      var fixedSpace = $('.navbar-inner').height() +48;
+      var fixedSpaceRatio = fixedSpace/windowHeight;
+      var chatBoxSize = (1 - fixedSpaceRatio)*100
+      var messageBoxSize = 
+      console.log(chatBoxSize)
+      $('#chat_box').css('height', chatBoxSize+'%')
+    }
+
+
+    $(window).resize(function() {
+      determineChatBoxSize();
+    });
+
+    determineChatBoxSize();
+
+
+  });
+
+</script>
+
+
+
+<style >
+  .logo{
+    margin-left:15px;
+  }
+  body{
+    overflow:hidden;
+  }
+  #app_body{
+    height:100%;
+
+  }
+
+  #people_area{
+    position:absolute;
+    height:100%;
+    right:0px;
+    top:0px;
+    background-color:#f1f1f1;
+  }
+
+  .no_margin_left{
+    margin-left:0%;
+  }
+
+
+</style>
+
+
+<div class="row-fluid" id="the_main_wrap">
+  
+  <div class="span2 side-panel layout_piece" id="channel_area" >
+    <div class="span12 no_margin_left" id="channels_box">
+    
     </div>
   </div>
-  <div class="sidebar">
-    <div class="sidebar_filler">
-      <div class="widgets"></div>
-    </div>
+
+  <div  layout_piece" id="chat_area_wrap">
+    <div class="span12 offsetby2" id="chat_area">
+
+      <div class="span12" id="chat_box">
+        
+      </div>
+      <!--ends the chat_box div-->
+
+      <textarea class="send_message span12" ></textarea>
+        
+      
+      <!--ends the message box-->
+
+
+      
+    </div>  
   </div>
+
+  <div class="span2 side-panel layout_piece" id="people_area" >
+    People Area
+  </div>
+
+
 </div>
-<div id="mask">&nbsp;</div>
-<ul class="audio_channels" style="display:none;">
-  <audio class="audio_private"></audio>
-  <audio class="audio_common"></audio>
-</ul>

@@ -1,0 +1,42 @@
+#chat_area_wrap{
+  position:absolute;
+  height:100%;
+  top:0px;
+  left:50%;
+  margin:0 auto;
+  height:100%;
+  width:66%;
+}
+
+#chat_area{
+  position:relative;
+  height:100%;
+  left:-50%;
+  top:48px;
+  height:100%;
+}
+
+
+#chat_box{
+  position:relative;  
+  height:80px;
+  background-color:#fff;
+  overflow-y:scroll;
+    
+}
+
+.message p.name{
+  color:#999;
+  font-weight:bold;
+}
+
+
+.send_message{
+  width:100%;
+  position:absolute;
+  bottom: 40px;
+  left:0px;
+  height:40px;
+}
+
+
