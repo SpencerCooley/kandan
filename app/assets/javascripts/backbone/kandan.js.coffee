@@ -103,7 +103,7 @@ window.Kandan =
 
   initChatArea: (channels)->
     chatArea = new Kandan.Views.ChatArea({channels: channels})
-    $(".main-area").append(chatArea.render().el)
+    $("#chatbox-holder").append(chatArea.render().el)
 
   onFetchChannels: (callback) ->
     (channels) ->

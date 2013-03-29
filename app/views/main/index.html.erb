@@ -22,7 +22,6 @@
     // the chat_box sizing will be thrown off since it's height is in %.
     // This sets the chat_box height relative to the ratio of "the nav bar height" /  "window height"
 
-    
     function determineChatBoxSize(){
       var windowHeight = $(window).height();
       var fixedSpace = $('.navbar-inner').height() +48;
@@ -45,6 +44,8 @@
   });
 
 </script>
+
+
 
 
 
@@ -76,6 +77,9 @@
 </style>
 
 
+
+
+
 <div class="row-fluid " id="the_main_wrap">
   
   <div class="span2 side-panel" id="channel_area" >
@@ -100,8 +104,9 @@
       </div>
       <!--ends the chat_box div-->
 
-
-      <textarea class="send_message span12" ></textarea>
+      <div id="chatbox-thing">
+        
+      </div>
       <!--ends the message box-->
 
 
